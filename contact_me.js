@@ -16,16 +16,13 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
-            $.ajax({
-                url: "https://saracmmce.github.io/contact_me.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    email: email,
-                    message: message
-                },
-                cache: false,
-                success: function() {
+            emailjs.send("gmail","template_mVT2ENl2",{
+              name: name, 
+              reply_email: email,
+              notes: message
+            })
+            .then(
+                function(response) {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -38,7 +35,7 @@ $(function() {
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
-                error: function() {
+                function(error) {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
