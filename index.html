@@ -371,7 +371,7 @@
     </div>
     <div class="col-md-8 col-md-offset-2">
       <h3>Leave me a message</h3>
-      <form name="sentMessage" id="contactForm" novalidate>
+      <form method="POST" action="http://formspree.io/cmkartik.1@gmail.com" novalidate>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -381,7 +381,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>
