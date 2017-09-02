@@ -371,7 +371,7 @@
     </div>
     <div class="col-md-8 col-md-offset-2">
       <h3>Leave me a message</h3>
-      <form name="sentMessage" id="contactForm" novalidate>
+<!--       <form name="sentMessage" id="contactForm" novalidate>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -392,7 +392,12 @@
         </div>
         <div id="success"></div>
         <button type="submit" class="btn btn-default">Send Message</button>
-      </form>
+      </form> -->
+        <form method="POST" action="http://formspree.io/cmkartik.1@gmail.com">
+          <input type="email" name="email" placeholder="Your email">
+          <textarea name="message" placeholder="Your message"></textarea>
+          <button type="submit">Send</button>
+        </form>
       <div class="social">
         <ul>
           <li><a href="https://www.facebook.com/saravanan.cm.14"><i class="fa fa-facebook"></i></a></li>
